@@ -71,15 +71,7 @@ const Right = styled.div`
 
 const Underline = styled.span`
     z-index: 1;
-    &:after{
-        content: '';
-        border-bottom: 3.2rem solid #005C59;
-        position: absolute;
-        z-index: -1;
-        width: 39.7rem;
-        left: 0;
-        bottom: 0.1rem;
-    }
+    box-shadow: inset 0 -0.9rem 0 ${Styles.colors.primary}, inset 0 -4.1rem 0 ${Styles.colors.highlight};
 `;
 
 const ProfilePicture = styled.div`
@@ -94,7 +86,7 @@ const Scroll = styled.span`
     color: ${Styles.colors.secondary};
     text-transform: uppercase;
     font-family: "Open Sans SemiBold";
-    font-size: 1.6rem;
+    font-size: ${Styles.fontSizes.default};
     margin: 4rem;
     &:before{
         content: '';
