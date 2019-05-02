@@ -6,6 +6,8 @@ export default {
     },
     fontSizes: {
         default: '1.6rem',
+        intro: '8.8rem',
+        aboutIntro: '6.4rem',
     },
     breakpoints: {
         mobile: 'max-width: 768px'
