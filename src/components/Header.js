@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Styles from '../Styles';
+import linkedin from '../assets/icons/linkedin.svg'
 
 function Header() {
   return (
@@ -8,6 +9,7 @@ function Header() {
         <nav>
             <Menu>
                 <MenuItem><a href="#">JA</a></MenuItem>
+                <MenuItem><a href="#">Home</a></MenuItem>
                 <MenuItem><a href="#">About</a></MenuItem>
                 <MenuItem><a href="#">Work</a></MenuItem>
                 <MenuItem><a href="#">Skills</a></MenuItem>
@@ -15,8 +17,7 @@ function Header() {
             </Menu>
         </nav>
         <Icons>
-            <Icon><a href="#">FB</a></Icon>
-            <Icon><a href="#">Insta</a></Icon>
+            <Icon className="icon-li" href="https://www.linkedin.com/in/jayce-ardon/" target="_blank"></Icon>
         </Icons>
     </Wrapper>
   );
@@ -56,8 +57,13 @@ const Icons = styled.ul`
     color: ${Styles.colors.secondary};
 `;
 
-const Icon = styled.li`
+const Icon = styled.a`
     margin-right: 8px;
+    &.icon-li{
+        background-image: url(${linkedin});
+        width: 2.4rem;
+        height: 2.4rem;
+    }
 `;
 
 export default Header;
