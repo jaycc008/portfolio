@@ -30,3 +30,18 @@ html{
 a:-webkit-any-link {
   color: unset;
 }
+
+a.active {
+  position: relative;
+}
+
+a.active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0.5rem;
+  left: -0.8rem;
+  width: 0.4rem;
+  height: 0.8rem;
+  background-color: #005C59;
+}

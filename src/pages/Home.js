@@ -4,21 +4,21 @@ import Styles from '../Styles';
 import chevrons from '../assets/icons/double-chevron.svg';
 import jayce from '../assets/img/jayce.jpg';
 
-function Home() {
+const Home = () => {
   return (
     <Wrapper>
-        <Left>
-            <Intro>
-                Yo! <br />
-                Welkom  <br />
-                op mijn  <br />
-                <Underline>portfolio</Underline>!
-            </Intro>
-        </Left>
-        <Right>
-            <ProfilePicture />
-            <Scroll>Scroll om me te leren kennen</Scroll>
-        </Right>
+      <Left>
+        <Intro>
+          Yo! <br />
+          Welkom  <br />
+          op mijn  <br />
+          <Underline>portfolio</Underline>!
+        </Intro>
+      </Left>
+      <Right>
+        <ProfilePicture />
+        <Scroll>Scroll om me te leren kennen</Scroll>
+      </Right>
     </Wrapper>
   );
 }
