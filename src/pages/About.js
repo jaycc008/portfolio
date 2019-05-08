@@ -1,21 +1,40 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components'
-import Styles from '../Styles';
-import chevrons from '../assets/icons/double-chevron-black.svg';
-import jayce from '../assets/img/jayce.jpg';
 
-function About() {
+import Styles from '../Styles';
+import Project from '../components/Project';
+import chevrons from '../assets/icons/double-chevron-black.svg';
+import tech from '../assets/img/674145718.png';
+
+const About = () => {
+
+  // const handleWheel = (e) => {
+  //   e.preventDefault();
+  //   console.info(e.currentTarget);
+  //   const delta = Math.max(-1, Math.min(1, (e.deltaY || -e.detail)));
+  //   e.currentTarget.scrollLeft += delta*40;
+  // };
+
   return (
+    // onWheel={(e) => handleWheel(e)}
     <Wrapper>
-        <Left>
-            <Intro>
-                Mijn passies en <br />
-                <Underline>drijfveren</Underline> zijn...
-            </Intro>
-            <Scroll>Scroll door en leer meer</Scroll>
-        </Left>
-        <Right>
-        </Right>
+      <Column>
+        <TextWrapper>
+          <Intro>
+            Mijn passies en <br />
+            <Underline>drijfveren</Underline> zijn...
+          </Intro>
+          <Scroll>Scroll door en leer meer</Scroll>
+        </TextWrapper>
+      </Column>
+      <Column>
+        <Project src={tech} title='Technology'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna 
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+          ullamco laboris nisi ut aliquip ex ea. 
+        </Project>
+      </Column>
     </Wrapper>
   );
 }
@@ -31,41 +50,39 @@ const shift = keyframes`
 `;
 
 const Wrapper = styled.div`
-    background-color: ${Styles.colors.secondary};
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 25%;
-    padding-left: 4rem;
+  background-color: ${Styles.colors.secondary};
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 `;
 
-const Left = styled.div`
+const Column = styled.div`
+  height: 100%;
+  flex: 0 0 auto;
+  &:first-child{
     width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  }
+`;
+
+const TextWrapper = styled.div`
+  padding: 4rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Intro = styled.h2`
     color: ${Styles.colors.primary};
-    font-size: ${Styles.fontSizes.aboutIntro};
-    font-weight: 700;
-    font-family: "Open Sans ExtraBold";
-    line-height: 8rem;
-    align-self: flex-start;
-    margin-top: 4rem;
-    position: relative;
-    z-index: 0;
-`;
-
-const Right = styled.div`
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+  font-size: ${Styles.fontSizes.aboutIntro};
+  font-weight: 700;
+  font-family: "Open Sans ExtraBold";
+  line-height: 8rem;
+  align-self: flex-start;
+  z-index: 0;
 `;
 
 const Underline = styled.span`
@@ -73,20 +90,11 @@ const Underline = styled.span`
     box-shadow: inset 0 -0.6rem 0 ${Styles.colors.secondary}, inset 0 -3rem 0 ${Styles.colors.highlight};
 `;
 
-const ProfilePicture = styled.div`
-    background-image: url(${jayce});
-    background-size: cover;
-    background-position: center;
-    width: 47rem;
-    height: 47rem;
-`;
-
 const Scroll = styled.span`
     color: ${Styles.colors.primary};
     text-transform: uppercase;
     font-family: "Open Sans SemiBold";
     font-size: ${Styles.fontSizes.default};
-    margin: 4rem;
     &:before{
         content: '';
         background-image: url(${chevrons});
