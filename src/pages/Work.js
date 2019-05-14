@@ -92,36 +92,34 @@ const ProjectWrapper = styled.div`
 `;
 
 const Intro = styled.h2`
-    color: ${Styles.colors.secondary};
+  color: ${Styles.colors.secondary};
   font-size: ${Styles.fontSizes.aboutIntro};
   font-weight: 700;
   font-family: "Open Sans ExtraBold";
   line-height: 8rem;
   align-self: flex-start;
-  z-index: 0;
 `;
 
 const Underline = styled.span`
-    z-index: 1;
-    box-shadow: inset 0 -0.6rem 0 ${Styles.colors.primary}, inset 0 -3rem 0 ${Styles.colors.highlight};
+  box-shadow: inset 0 -0.6rem 0 ${Styles.colors.primary}, inset 0 -3rem 0 ${Styles.colors.highlight};
 `;
 
 const Scroll = styled.span`
-    color: ${Styles.colors.secondary};
-    text-transform: uppercase;
-    font-family: "Open Sans SemiBold";
-    font-size: ${Styles.fontSizes.default};
-    &:before{
-        content: '';
-        background-image: url(${chevrons});
-        background-repeat: no-repeat;
-        width: 1.6rem;
-        height: 1.6rem;
-        display: inline-block;
-        padding-right: 0.8rem;
-        position: relative;
-        animation: ${shift} 1s linear infinite;
-    }
+  color: ${Styles.colors.secondary};
+  text-transform: uppercase;
+  font-family: "Open Sans SemiBold";
+  font-size: ${Styles.fontSizes.default};
+  &:before{
+    content: '';
+    background-image: url(${chevrons});
+    background-repeat: no-repeat;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-block;
+    padding-right: 0.8rem;
+    position: relative;
+    animation: ${shift} 1s linear infinite;
+  }
 `;
 
 export default Work;
