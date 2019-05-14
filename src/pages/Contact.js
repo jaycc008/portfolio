@@ -1,8 +1,7 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 import Styles from '../Styles.json';
-import chevrons from '../icons/double-chevron-black.svg';
 
 const Home = () => {
   return (

@@ -1,39 +1,63 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components'
+import Slider from "react-slick";
 
 import Styles from '../Styles.json';
 import Interest from '../components/Interest';
 import chevrons from '../icons/double-chevron.svg';
+import left from '../icons/arrow-left-white.svg';
+import right from '../icons/arrow-right-white.svg';
 
 const About = () => {
 
-  // const handleWheel = (e) => {
-  //   e.preventDefault();
-  //   console.info(e.currentTarget);
-  //   const delta = Math.max(-1, Math.min(1, (e.deltaY || -e.detail)));
-  //   e.currentTarget.scrollLeft += delta*40;
-  // };
+  const settings = {
+    className: "slider variable-width",
+    dots: true,
+    infinite: false,
+    initialSlide: 0,
+    slidesToScroll: 1,
+    variableWidth: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
 
   return (
-    // onWheel={(e) => handleWheel(e)}
     <Wrapper>
-      <Column>
-        <TextWrapper>
-          <Intro>
-            Mijn passies en <br />
-            <Underline>drijfveren</Underline> zijn...
-          </Intro>
-          <Scroll>Scroll door en leer meer</Scroll>
-        </TextWrapper>
-      </Column>
-      <Column>
-        <Interest src='/img/674145718.png' title='Technology'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna 
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-          ullamco laboris nisi ut aliquip ex ea. 
-        </Interest>
-      </Column>
+      <Slider {...settings}>
+        <div>
+          <TextWrapper>
+            <Intro>
+              Mijn passies en <br />
+              <Underline>drijfveren</Underline> zijn...
+            </Intro>
+            <Scroll>Scroll door en leer meer</Scroll>
+          </TextWrapper>
+        </div>
+        <div>
+          <Interest src='/img/674145718.png' title='Technology'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea. 
+          </Interest>
+        </div>
+        <div>
+          <Interest src='/img/674145718.png' title='Technology'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea. 
+          </Interest>
+        </div>
+        <div>
+          <Interest src='/img/674145718.png' title='Technology'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea. 
+          </Interest>
+        </div>
+      </Slider>
     </Wrapper>
   );
 }
@@ -48,34 +72,61 @@ const shift = keyframes`
   }
 `;
 
+const PrevArrow = styled.div`
+  left: 0;
+  z-index: 1;
+  width: 6rem;
+  height: 100%;
+  &:before{
+    content: '';
+    background-image: url(${left});
+    background-repeat: no-repeat;
+    width: 1.6rem;
+    height: 1.4rem;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+const NextArrow = styled.div`
+  right: 0;
+  z-index: 1;
+  width: 6rem;
+  height: 100%;
+  &:before{
+    content: '';
+    background-image: url(${right});
+    background-repeat: no-repeat;
+    width: 1.6rem;
+    height: 1.4rem;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+`;
+
 const Wrapper = styled.div`
   background-color: ${Styles.colors.secondary};
   height: 25%;
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-`;
-
-const Column = styled.div`
-  height: 100%;
-  flex: 0 0 auto;
-  &:first-child{
-    width: 50%;
-  }
+  overflow: hidden;
 `;
 
 const TextWrapper = styled.div`
   padding: 4rem;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 const Intro = styled.h2`
-    color: ${Styles.colors.primary};
+  color: ${Styles.colors.primary};
   font-size: ${Styles.fontSizes.aboutIntro};
   font-weight: 700;
   font-family: "Open Sans ExtraBold";
