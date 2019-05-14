@@ -1,0 +1,7 @@
+[
+  {"id": 1, "src": "/img/674145718.png", "title": "JA-development", "subtitle": "Portfolio", "technologies": ["React 16.8", "Function Components", "Hooks", "JSX", "Styled Components"]},
+  {"id": 2, "src": "/img/jayce.jpg", "title": "Soulia Moor", "subtitle": "Portfolio", "technologies": ["Bootstrap", "HTML5", "CSS3"]},
+  {"id": 3, "src": "/img/674145718.png", "title": "Alnaus Foundation", "subtitle": "Doorvoeren nieuw design", "technologies": ["Wordpress", "CSS3", "Sketch"]},
+  {"id": 4, "src": "/img/jayce.jpg", "title": "PURE Gerbera", "subtitle": "Bedrijfswebsite met CMS", "technologies": ["PHP 5.4", "Bootstrap", "CSS3", "HTML5"]},
+  {"id": 5, "src": "/img/674145718.png", "title": "FinCircle", "subtitle": "Doorontwikkeling webapplicatie", "technologies": ["JavaScript", "HTML5", "CSS3", "C#", "ASP.NET", "Illustrator"]}
+]

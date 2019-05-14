@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components'
-import Styles from '../Styles';
-import chevrons from '../assets/icons/double-chevron.svg';
-import jayce from '../assets/img/jayce.jpg';
+
+import Styles from '../Styles.json';
+import chevrons from '../icons/double-chevron-black.svg';
 
 const Home = () => {
   return (
@@ -75,7 +75,7 @@ const Underline = styled.span`
 `;
 
 const ProfilePicture = styled.div`
-    background-image: url(${jayce});
+    background-image: url('/img/jayce.jpg');
     background-size: cover;
     background-position: center;
     width: 47rem;

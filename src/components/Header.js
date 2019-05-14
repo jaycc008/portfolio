@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import Styles from '../Styles';
-import linkedin from '../assets/icons/linkedin.svg';
+
+import Styles from '../Styles.json';
+import linkedin from '../icons/linkedin.svg';
 import NavLink from './NavLink';
 
 const menuItems = [
@@ -30,7 +31,7 @@ const Header = () => {
           {menuItems.map((item) => (
             <li key={item.id} >
               <NavLink 
-                {...item}
+                item={item}
                 isActive={activeId === item.id}
                 onClick={navigate} />
             </li>
@@ -56,7 +57,7 @@ const Wrapper = styled.div`
 const Menu = styled.ul`
   display: flex;
   flex-direction: column;
-  color: ${Styles.colors.secondary};
+  color: ${Styles.colors.primary};
 
   li {
     margin: 0 0 0.8rem 2.4rem;

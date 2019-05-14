@@ -1,10 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components'
 
-import Styles from '../Styles';
-import Project from '../components/Project';
-import chevrons from '../assets/icons/double-chevron-black.svg';
-import tech from '../assets/img/674145718.png';
+import Styles from '../Styles.json';
+import Interest from '../components/Interest';
+import chevrons from '../icons/double-chevron.svg';
 
 const About = () => {
 
@@ -28,12 +27,12 @@ const About = () => {
         </TextWrapper>
       </Column>
       <Column>
-        <Project src={tech} title='Technology'>
+        <Interest src='/img/674145718.png' title='Technology'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna 
           aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
           ullamco laboris nisi ut aliquip ex ea. 
-        </Project>
+        </Interest>
       </Column>
     </Wrapper>
   );
