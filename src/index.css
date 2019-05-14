@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Gugi');
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
 
 body {
   margin: 0;
@@ -45,4 +47,20 @@ a.active::before {
   width: 0.4rem;
   height: 0.8rem;
   background-color: #005C59;
+}
+
+.slick-slider{
+  height: 100%;
+}
+
+.slick-dots{
+  top: 10px;
+}
+
+.slick-dots li button::before{
+  color: white !important;
+}
+
+.slick-dots li.slick-active button::before{
+  color: white !important;
 }

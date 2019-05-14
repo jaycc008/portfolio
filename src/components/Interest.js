@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Styles from '../Styles.json';
+
 const Interest = (props) => {
   return (
     <Wrapper>
@@ -18,8 +20,9 @@ const Interest = (props) => {
 }
 
 const Wrapper = styled.div`
+  color: ${Styles.colors.primary};
   padding: 4rem;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: row;
 `;
@@ -30,7 +33,6 @@ const Image = styled.img`
 
 const ContentWrapper = styled.div`
   padding-left: 4rem;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -44,7 +46,8 @@ const Title = styled.h3`
 `;
 
 const TextWrapper = styled.div`
-  width: 4rem;
+  width: 43rem;
+  margin-right: 13.4rem;
 `;
 
 const Text = styled.p`

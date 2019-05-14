@@ -55,6 +55,7 @@ const Nav = styled.h2`
   font-size: 8.8rem;
   line-height: 10.4rem;
   margin-bottom: 0.8rem;
+  user-select: none;
 `;
 
 const Arrow = styled.div`
