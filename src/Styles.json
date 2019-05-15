@@ -2,7 +2,9 @@
     "colors": {
         "primary": "#E2E8E8",
         "secondary": "#090B0B",
-        "highlight": "#005C59"
+        "header": "#1E2424",
+        "highlight": "#005C59",
+        "arrowHover": "#079590"
     },
     "fontSizes": {
         "default": "1.6rem",

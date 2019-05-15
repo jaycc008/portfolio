@@ -46,7 +46,7 @@ const Header = () => {
 }
 
 const Wrapper = styled.div`
-  background-color: #1E2424;
+  background-color: ${Styles.colors.header};
   position: fixed;
   left: 0;
   top: 0;

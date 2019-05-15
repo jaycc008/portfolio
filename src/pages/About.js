@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import Styles from '../Styles.json';
 import Interest from '../components/Interest';
 import chevrons from '../icons/double-chevron.svg';
-import left from '../icons/arrow-left-white.svg';
-import right from '../icons/arrow-right-white.svg';
+import left from '../icons/arrow-left.svg';
+import right from '../icons/arrow-right.svg';
 
 const About = () => {
 
@@ -75,8 +75,19 @@ const shift = keyframes`
 const PrevArrow = styled.div`
   left: 0;
   z-index: 1;
-  width: 6rem;
-  height: 100%;
+  width: 4rem;
+  height: 4rem;
+  background-color: ${Styles.colors.highlight};
+  transition: 0.3s;
+
+  &.slick-disabled:hover {
+    background: ${Styles.colors.highlight};
+  }
+
+  &:not(.slick-disabled):hover {
+    background: ${Styles.colors.arrowHover};
+  }
+
   &:before{
     content: '';
     background-image: url(${left});
@@ -88,14 +99,27 @@ const PrevArrow = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 1;
   }
 `;
 
 const NextArrow = styled.div`
   right: 0;
   z-index: 1;
-  width: 6rem;
-  height: 100%;
+  width: 4rem;
+  height: 4rem;
+  background-color: ${Styles.colors.highlight};
+  opacity: 1;
+  transition: 0.3s;
+
+  &.slick-disabled:hover {
+    background: ${Styles.colors.highlight};
+  }
+
+  &:not(.slick-disabled):hover {
+    background: ${Styles.colors.arrowHover};
+  }
+
   &:before{
     content: '';
     background-image: url(${right});
@@ -107,6 +131,7 @@ const NextArrow = styled.div`
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
+    opacity: 1;
   }
 `;
 
