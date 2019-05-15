@@ -27,18 +27,13 @@ code {
 
 html{
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
-a:-webkit-any-link {
-  color: unset;
-}
-
-a.active {
+p.active {
   position: relative;
 }
 
-a.active::before {
+p.active::before {
   content: '';
   display: block;
   position: absolute;

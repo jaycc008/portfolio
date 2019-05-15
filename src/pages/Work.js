@@ -52,7 +52,7 @@ const shift = keyframes`
 
 const Wrapper = styled.div`
   background-color: ${Styles.colors.primary};
-  height: 25%;
+  height: 100vh;  
   width: 100%;
   display: flex;
   flex-direction: column;

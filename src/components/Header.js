@@ -1,6 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { animateScroll as scroll } from 'react-scroll';
 
 import Styles from '../Styles.json';
 import linkedin from '../icons/linkedin.svg';
@@ -10,24 +10,40 @@ const menuItems = [
   {id: 0, target: "Home"}, 
   {id: 1, target: "About"}, 
   {id: 2, target: "Work"}, 
-  {id: 3, target: "Skills"}, 
-  {id: 4, target: "Contact"}
+  {id: 3, target: "Contact"}
 ];
 
 const Header = () => {
   const [activeId, setActiveId] = useState(0);
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if(window.scrollY >= window.innerHeight * 3){
+      setActiveId(3);
+    } else if (window.scrollY >= window.innerHeight * 2){
+      setActiveId(2);
+    } else if (window.scrollY >= window.innerHeight){
+      setActiveId(1);
+    } else {
+      setActiveId(0);
+    }
+  };
+
   const navigate = (id) => {
-    setActiveId(id);
+    scroll.scrollTo(id * window.innerHeight);
   };
 
   return (
     <Wrapper>
       <nav>
         <Menu>
-          <li>
-            <a href="#">JA</a>
-          </li>
+          <Logo>
+            JA
+          </Logo>
           {menuItems.map((item) => (
             <li key={item.id} >
               <NavLink 
@@ -69,6 +85,10 @@ const Menu = styled.ul`
       margin: 2.4rem;
     }
   }
+`;
+
+const Logo = styled.li`
+  user-select: none;
 `;
 
 const Icons = styled.ul`
