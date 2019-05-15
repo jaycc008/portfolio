@@ -72,6 +72,12 @@ const shift = keyframes`
   }
 `;
 
+const Wrapper = styled.div`
+  background-color: ${Styles.colors.secondary};
+  height: 100vh;
+  overflow: hidden;
+`;
+
 const PrevArrow = styled.div`
   left: 0;
   z-index: 1;
@@ -133,12 +139,6 @@ const NextArrow = styled.div`
     transform: translate(50%, -50%);
     opacity: 1;
   }
-`;
-
-const Wrapper = styled.div`
-  background-color: ${Styles.colors.secondary};
-  height: 25%;
-  overflow: hidden;
 `;
 
 const TextWrapper = styled.div`
