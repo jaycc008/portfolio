@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import Styles from '../Styles.json';
 import Interest from '../components/Interest';
 import chevrons from '../icons/double-chevron.svg';
-import left from '../icons/arrow-left.svg';
-import right from '../icons/arrow-right.svg';
+import left from '../icons/arrow-left-white.svg';
+import right from '../icons/arrow-right-white.svg';
 
 const About = () => {
 
