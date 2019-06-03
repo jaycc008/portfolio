@@ -77,11 +77,11 @@ const Menu = styled.ul`
 
   li {
     margin: 0 0 0.8rem 2.4rem;
-    font-size: ${Styles.fontSizes.default};
+    font-size: ${Styles.fontSizes.XS};
     
     &:first-child{
       font-family: 'Gugi', cursive;
-      font-size: 5.2rem;
+      font-size: ${Styles.fontSizes.Logo};
       margin: 2.4rem;
     }
   }
@@ -101,12 +101,12 @@ const Icons = styled.ul`
 `;
 
 const Icon = styled.a`
-    margin-right: 8px;
-    &.icon-li{
-        background-image: url(${linkedin});
-        width: 2.4rem;
-        height: 2.4rem;
-    }
+  margin-right: 8px;
+  &.icon-li{
+    background-image: url(${linkedin});
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 `;
 
 export default Header;

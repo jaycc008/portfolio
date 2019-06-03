@@ -34,13 +34,22 @@ const Contact = styled.h2`
   color: ${Styles.colors.primary};
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
-  font-size: 4rem;
-  line-height: 5.6rem;
+  font-size: ${Styles.fontSizes.S};
+  line-height: ${Styles.lineHeights.S};
   margin-bottom: 2rem;
+
+  @media (${Styles.breakpoints.tabletWidth}) {
+    font-size: ${Styles.fontSizes.MobileS};
+    line-height: ${Styles.lineHeights.MobileS};
+  }
 `;
 
 const Underline = styled.span`
   box-shadow: inset 0 -0.4rem 0 ${Styles.colors.secondary}, inset 0 -2rem 0 #005C59;
+
+  @media (${Styles.breakpoints.tabletWidth}) {
+    box-shadow: inset 0 -0.4rem 0 ${Styles.colors.secondary}, inset 0 -1.2rem 0 #005C59;
+  }
 `;
 
 const ContactInfo = styled.div`
@@ -52,8 +61,8 @@ const ContactInfo = styled.div`
     color: ${Styles.colors.primary};
     font-family: 'Open Sans', sans-serif;
   font-weight: 800;
-    font-size: 1.6rem;
-    line-height: 2.6rem;
+    font-size: ${Styles.fontSizes.XS};
+    line-height: ${Styles.lineHeights.XS};
   }
 `;
 

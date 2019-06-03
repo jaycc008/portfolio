@@ -7,12 +7,39 @@
     "arrowHover": "#079590"
   },
   "fontSizes": {
+    "Logo": "5.2rem",
+    "XXL": "8.8rem",
+    "XL": "8rem",
+    "L": "6.4rem",
+    "M": "5.6rem",
+    "S": "4rem",
+    "Mobile": "3.2rem",
+    "MobileS": "2.4rem",
+    "XS": "1.6rem",
+    "XXS": "1.2rem"
+  },
+  "lineHeights": {
+    "XXL": "10.4rem",
+    "XL": "9.6rem",
+    "L": "8rem",
+    "M": "7.2rem",
+    "S": "5.6rem",
+    "Mobile": "4rem",
+    "MobileS": "3.2rem",
+    "XS": "2.6rem"
+  },
+  "underlines": {
     "default": "1.6rem",
-    "intro": "8.8rem",
-    "aboutIntro": "6.4rem"
+    "header": "6.4rem",
+    "XXL": "10.4rem",
+    "XL": "9.4rem",
+    "L": "8rem",
+    "headerLaptop": "5.6rem"
   },
   "breakpoints": {
-    "laptop": "max-width: 1280px",
-    "mobile": "max-width: 768px"
+    "laptopWidth": "max-width: 1200px",
+    "laptopHeight": "max-height: 700px",
+    "tabletWidth": "max-width: 860px",
+    "mobileWidth": "max-width: 480px"
   }
 }
