@@ -9,7 +9,6 @@ const Home = () => {
     <Wrapper>
       <Left>
         <Intro>
-          Yo! <br />
           Welkom  <br />
           op mijn  <br />
           <Underline>portfolio</Underline>!
@@ -51,8 +50,8 @@ const Left = styled.div`
 const Intro = styled.h1`
     color: ${Styles.colors.secondary};
     font-size: ${Styles.fontSizes.intro};
-    font-weight: 700;
-    font-family: "Open Sans ExtraBold";
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
     line-height: 10.4rem;
     align-self: flex-end;
     margin-bottom: 4rem;
@@ -85,7 +84,8 @@ const ProfilePicture = styled.div`
 const Scroll = styled.span`
     color: ${Styles.colors.secondary};
     text-transform: uppercase;
-    font-family: "Open Sans SemiBold";
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     font-size: ${Styles.fontSizes.default};
     margin: 4rem;
     &:before{

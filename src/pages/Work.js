@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 import Styles from '../Styles.json';
 import Project from '../components/Project';
 import chevrons from '../icons/double-chevron-black.svg';
-import projectItems from './ProjectItems.json';
+import projectItems from '../data/ProjectItems.json';
 
 function Work() {
   const [activeProject, setActiveProject] = React.useState(0);
@@ -30,12 +30,13 @@ function Work() {
               key={projectItems[activeProject].id}
               item={projectItems[activeProject]}
               onClick={navigate}
+              length={projectItems.length}
             />
           </ProjectWrapper>
           <aside></aside>
         </Row>
       </RowWrapper>
-      <Scroll>Scroll door om mijn skills te checken</Scroll>
+      <Scroll>Scroll door voor mijn contactinformatie</Scroll>
     </Wrapper>
   );
 }
@@ -67,6 +68,10 @@ const RowWrapper = styled.div`
   flex-wrap: nowrap;
   overflow-x: auto;
   margin-bottom: 5.8rem;
+
+  @media (${Styles.breakpoints.laptop}) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const Row = styled.div`
@@ -94,8 +99,8 @@ const ProjectWrapper = styled.div`
 const Intro = styled.h2`
   color: ${Styles.colors.secondary};
   font-size: ${Styles.fontSizes.aboutIntro};
-  font-weight: 700;
-  font-family: "Open Sans ExtraBold";
+  font-weight: 800;
+  font-family: 'Open Sans';
   line-height: 8rem;
   align-self: flex-start;
 `;
@@ -107,7 +112,8 @@ const Underline = styled.span`
 const Scroll = styled.span`
   color: ${Styles.colors.secondary};
   text-transform: uppercase;
-  font-family: "Open Sans SemiBold";
+  font-family: "Open Sans";
+  font-weight: 600;
   font-size: ${Styles.fontSizes.default};
   &:before{
     content: '';
