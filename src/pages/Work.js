@@ -57,8 +57,12 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 4rem;
   justify-content: space-between;
+  padding: 4rem;
+
+  @media (${Styles.breakpoints.laptopHeight}), (${Styles.breakpoints.laptopWidth}) {
+    padding: 2rem;
+  }
 `;
 
 const RowWrapper = styled.div`
@@ -69,7 +73,7 @@ const RowWrapper = styled.div`
   overflow-x: auto;
   margin-bottom: 5.8rem;
 
-  @media (${Styles.breakpoints.laptop}) {
+  @media (${Styles.breakpoints.laptopHeight}) {
     margin-bottom: 2rem;
   }
 `;
@@ -80,9 +84,17 @@ const Row = styled.div`
   flex: 0 0 auto;
   display: grid;
   grid-template-areas: "left projects right";
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: auto 10fr auto;
   overflow-x: hidden;
   grid-gap: 0 4rem;
+
+  @media (${Styles.breakpoints.laptopWidth}) {
+    grid-gap: 0 2rem;
+  }
+
+  @media (${Styles.breakpoints.tabletWidth}) {
+    grid-gap: 0;
+  }
 `;
 
 const ProjectWrapper = styled.div`
@@ -98,10 +110,10 @@ const ProjectWrapper = styled.div`
 
 const Intro = styled.h2`
   color: ${Styles.colors.secondary};
-  font-size: ${Styles.fontSizes.aboutIntro};
+  font-size: ${Styles.fontSizes.L};
+  line-height: ${Styles.lineHeights.L};
   font-weight: 800;
   font-family: 'Open Sans';
-  line-height: 8rem;
   align-self: flex-start;
 `;
 
@@ -114,7 +126,7 @@ const Scroll = styled.span`
   text-transform: uppercase;
   font-family: "Open Sans";
   font-weight: 600;
-  font-size: ${Styles.fontSizes.default};
+  font-size: ${Styles.fontSizes.XS};
   &:before{
     content: '';
     background-image: url(${chevrons});

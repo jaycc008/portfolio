@@ -14,7 +14,7 @@ const About = () => {
   const settings = {
     className: "slider variable-width",
     dots: true,
-    infinite: false,
+    infinite: true,
     initialSlide: 0,
     slidesToScroll: 1,
     variableWidth: true,
@@ -133,41 +133,67 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (${Styles.breakpoints.laptopWidth}) {
+    width: 65vw;
+  }
+
+  @media (${Styles.breakpoints.tabletWidth}) {
+    width: 80vw;
+    padding: 2rem;
+  }
 `;
 
 const Intro = styled.h2`
   color: ${Styles.colors.primary};
-  font-size: ${Styles.fontSizes.aboutIntro};
-  font-weight: 700;
+  font-size: ${Styles.fontSizes.L};
+  line-height: ${Styles.lineHeights.L};
   font-family: 'Open Sans';
   font-weight: 800;
-  line-height: 8rem;
   align-self: flex-start;
   z-index: 0;
+
+  @media (${Styles.breakpoints.laptopWidth}) {
+    font-size: ${Styles.fontSizes.M};
+    line-height: ${Styles.lineHeights.M};
+  }
+
+  @media (${Styles.breakpoints.tabletWidth}) {
+    font-size: ${Styles.fontSizes.S};
+    line-height: ${Styles.lineHeights.S};
+  }
 `;
 
 const Underline = styled.span`
-    z-index: 1;
-    box-shadow: inset 0 -0.6rem 0 ${Styles.colors.secondary}, inset 0 -3rem 0 ${Styles.colors.highlight};
+  z-index: 1;
+  box-shadow: inset 0 -0.6rem 0 ${Styles.colors.secondary}, inset 0 -3rem 0 ${Styles.colors.highlight};
+
+  @media (${Styles.breakpoints.laptopWidth}) {
+    box-shadow: inset 0 -0.6rem 0 ${Styles.colors.secondary}, inset 0 -2.6rem 0 ${Styles.colors.highlight};
+  }
+
+  @media (${Styles.breakpoints.tabletWidth}) {
+    box-shadow: inset 0 -0.6rem 0 ${Styles.colors.secondary}, inset 0 -2rem 0 ${Styles.colors.highlight};
+  }
 `;
 
 const Scroll = styled.span`
-    color: ${Styles.colors.primary};
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: ${Styles.fontSizes.default};
-    &:before{
-        content: '';
-        background-image: url(${chevrons});
-        background-repeat: no-repeat;
-        width: 1.6rem;
-        height: 1.6rem;
-        display: inline-block;
-        padding-right: 0.8rem;
-        position: relative;
-        animation: ${shift} 1s linear infinite;
-    }
+  color: ${Styles.colors.primary};
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: ${Styles.fontSizes.XS};
+  &:before{
+    content: '';
+    background-image: url(${chevrons});
+    background-repeat: no-repeat;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-block;
+    padding-right: 0.8rem;
+    position: relative;
+    animation: ${shift} 1s linear infinite;
+  }
 `;
 
 export default About;
