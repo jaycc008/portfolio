@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import Slider from "react-slick";
 
 import Styles from '../Styles.json';
+import interests from '../data/Interests.json';
 import Interest from '../components/Interest';
 import chevrons from '../icons/double-chevron.svg';
 import left from '../icons/arrow-left-white.svg';
@@ -33,30 +34,11 @@ const About = () => {
             <Scroll>Scroll door en leer meer</Scroll>
           </TextWrapper>
         </div>
-        <div>
-          <Interest src='/img/674145718.png' title='Technology'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna 
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-            ullamco laboris nisi ut aliquip ex ea. 
-          </Interest>
-        </div>
-        <div>
-          <Interest src='/img/674145718.png' title='Technology'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna 
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-            ullamco laboris nisi ut aliquip ex ea. 
-          </Interest>
-        </div>
-        <div>
-          <Interest src='/img/674145718.png' title='Technology'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna 
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-            ullamco laboris nisi ut aliquip ex ea. 
-          </Interest>
-        </div>
+        {interests.map(item => (
+          <div key={item.id}>
+            <Interest item={item} />
+          </div>
+        ))}
       </Slider>
     </Wrapper>
   );
@@ -76,6 +58,9 @@ const Wrapper = styled.div`
   background-color: ${Styles.colors.secondary};
   height: 100vh;
   overflow: hidden;
+  & div {
+    outline: none;
+  }
 `;
 
 const PrevArrow = styled.div`
@@ -154,7 +139,8 @@ const Intro = styled.h2`
   color: ${Styles.colors.primary};
   font-size: ${Styles.fontSizes.aboutIntro};
   font-weight: 700;
-  font-family: "Open Sans ExtraBold";
+  font-family: 'Open Sans';
+  font-weight: 800;
   line-height: 8rem;
   align-self: flex-start;
   z-index: 0;
@@ -168,7 +154,8 @@ const Underline = styled.span`
 const Scroll = styled.span`
     color: ${Styles.colors.primary};
     text-transform: uppercase;
-    font-family: "Open Sans SemiBold";
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     font-size: ${Styles.fontSizes.default};
     &:before{
         content: '';

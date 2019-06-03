@@ -1,17 +1,18 @@
 {
-    "colors": {
-        "primary": "#E2E8E8",
-        "secondary": "#090B0B",
-        "header": "#1E2424",
-        "highlight": "#005C59",
-        "arrowHover": "#079590"
-    },
-    "fontSizes": {
-        "default": "1.6rem",
-        "intro": "8.8rem",
-        "aboutIntro": "6.4rem"
-    },
-    "breakpoints": {
-        "mobile": "max-width: 768px"
-    }
+  "colors": {
+    "primary": "#E2E8E8",
+    "secondary": "#090B0B",
+    "header": "#1E2424",
+    "highlight": "#005C59",
+    "arrowHover": "#079590"
+  },
+  "fontSizes": {
+    "default": "1.6rem",
+    "intro": "8.8rem",
+    "aboutIntro": "6.4rem"
+  },
+  "breakpoints": {
+    "laptop": "max-width: 1280px",
+    "mobile": "max-width: 768px"
+  }
 }

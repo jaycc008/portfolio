@@ -1,15 +1,17 @@
 import React,  {useCallback} from 'react';
 import styled from 'styled-components';
+
+import Styles from '../Styles.json';
 import left from '../icons/arrow-left.svg';
 import right from '../icons/arrow-right.svg';
 
-const Project = ({ item, onClick }) => {
+const Project = ({ item, onClick, length }) => {
   
   return (
     <Wrapper>
       <ContentWrapper>
         <Nav>
-          {item.id}/5
+          {item.id}/{length}
           <Arrow onClick={useCallback(() => onClick('prev'), [onClick])} style={{backgroundImage: `url(${left})`}} />
           <Arrow onClick={useCallback(() => onClick('next'), [onClick])} style={{backgroundImage: `url(${right})`}} />
         </Nav>
@@ -23,11 +25,12 @@ const Project = ({ item, onClick }) => {
               {item.subtitle}
             </SubTitle>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna 
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-              ullamco laboris nisi ut aliquip ex ea.
+              {item.text}
             </p>
+            <Technologies>
+              Technologiën: {item.technologies.join(', ')}
+            </Technologies>
+            {item.url ? <Link href={item.url} target='_blank'>Link naar website</Link> : ''}
           </Text>
           <aside />
         </TextWrapper>
@@ -42,16 +45,23 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 6fr 4fr;
   grid-template-areas: "text image";
+
+  outline: none;
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 6.4rem;
+
+  @media (${Styles.breakpoints.laptop}) {
+    margin-top: 2rem;
+  }
 `;
 
 const Nav = styled.h2`
-  font-family: 'Open Sans ExtraBold';
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
   font-size: 8.8rem;
   line-height: 10.4rem;
   margin-bottom: 0.8rem;
@@ -71,7 +81,8 @@ const Arrow = styled.div`
 `;
 
 const Title = styled.h3`
-  font-family: 'Open Sans ExtraBold';
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
   font-size: 4rem;
   line-height: 5.6rem;
   margin-bottom: 2rem;
@@ -85,7 +96,8 @@ const TextWrapper = styled.div`
 `;
 
 const SubTitle = styled.h4`
-  font-family: 'Open Sans SemiBold';
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
   color: #090B0B;
   opacity: 0.75;
   font-size: 1.6rem;
@@ -97,7 +109,8 @@ const Text = styled.div`
   display: inline-block;
   width: 43rem;
   & p{
-    font-family: 'Open Sans SemiBold';
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.6rem;
   }
@@ -106,8 +119,34 @@ const Text = styled.div`
 const Image = styled.div`
   height: 100%;
   width: 100%;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
+`;
+
+const Technologies = styled.p`
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #090B0B;
+  opacity: 0.75;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+`;
+
+const Link = styled.a`
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  margin-bottom: 1.6rem;
+  color: ${Styles.colors.secondary};
+  box-shadow: inset 0 -0.8rem 0 ${Styles.colors.highlight};
+  transition: 0.3s;
+  &:hover{
+    box-shadow: inset 0 -2.4rem 0 ${Styles.colors.highlight};
+  }
 `;
 
 export default Project;
