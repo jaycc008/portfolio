@@ -27,7 +27,8 @@ function Work() {
           <aside></aside>
           <ProjectWrapper>
             <Project
-              key={projectItems[activeProject].id}
+              key={activeProject}
+              current={activeProject}
               item={projectItems[activeProject]}
               onClick={navigate}
               length={projectItems.length}

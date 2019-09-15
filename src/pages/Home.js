@@ -9,9 +9,9 @@ const Home = () => {
     <Wrapper>
       <Left>
         <Intro>
-          Welkom  <br />
-          op mijn  <br />
-          <Underline>portfolio</Underline>!
+          Hi, ik ben <br />
+          <Underline>Jayce Ardon</Underline> <br />
+          Frontend Developer
         </Intro>
       </Left>
       <Right>
@@ -53,8 +53,8 @@ const Left = styled.div`
 
 const Intro = styled.h1`
   color: ${Styles.colors.secondary};
-  font-size: ${Styles.fontSizes.XXL};
-  line-height: ${Styles.lineHeights.XXL};
+  font-size: ${Styles.fontSizes.XL};
+  line-height: ${Styles.lineHeights.XL};
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   align-self: flex-end;
@@ -96,7 +96,7 @@ const Right = styled.div`
 
 const Underline = styled.span`
   z-index: 1;
-  box-shadow: inset 0 -0.9rem 0 ${Styles.colors.primary}, inset 0 -4.1rem 0 ${Styles.colors.highlight};
+  box-shadow: inset 0 -0.9rem 0 ${Styles.colors.primary}, inset 0 -3.9rem 0 ${Styles.colors.highlight};
   
   @media (${Styles.breakpoints.laptopHeight}), (${Styles.breakpoints.laptopWidth}) {
     box-shadow: inset 0 -0.9rem 0 ${Styles.colors.primary}, inset 0 -3.7rem 0 ${Styles.colors.highlight};

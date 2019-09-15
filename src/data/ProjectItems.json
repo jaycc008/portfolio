@@ -1,70 +1,67 @@
 [
   {
-    "id": 1, 
-    "src": "/img/portfolio.jpg", 
-    "title": "JA-development", 
-    "text": "Mijn voorgaande portfolio was inmiddels zo verouderd, dat het tijd werd voor een nieuwe. Uiteraard heb ik gekozen deze website met React te maken, aangezien ik mijzelf wilde uitdagen en React erg hot is op het moment.",
+    "src": "/img/logo-vanmoof.png",
+    "title": "sorrythieves",
+    "subtitle": "VanMoof - Campagne pagina",
+    "url": "http://sorrythieves.com",
+    "text": "Als losstaand project voor VanMoof heb ik deze prachtige campagne pagina opgeleverd. Met deze campagne geeft VanMoof duidelijk aan dat ze klaar met fietsendiefstal zijn. Het was een geweldig project om aan te werken, omdat het design top is en de nieuwste technologieën werden toegepast.",
     "technologies": [
-      "React 16.8", 
-      "Function Components", 
-      "Hooks", 
-      "JSX", 
+      "React 16.8",
+      "Functional Components",
+      "Hooks",
+      "TSX",
+      "JSS",
+      "NextJS",
+      "Spring"
+    ]
+  },
+  {
+    "src": "/img/portfolio.jpg",
+    "title": "JA-development",
+    "text": "Mijn eerste echte project met React was deze website. Aangezien ik op het moment van ontwikkelen zo snel mogelijk een nieuwe baan wilde, heb ik mijzelf in 2 weken React geleerd, deze site gemaakt en zoveel mogelijk best practices gebruikt.",
+    "technologies": [
+      "React 16.8",
+      "Functional Components",
+      "Hooks",
+      "JSX",
       "Styled Components"
     ]
   },
   {
-    "id": 2, 
-    "src": "/img/soulia.jpg", 
-    "title": "Portfolio Soulia", 
-    "url": "http://souliamoor.nl/", 
+    "src": "/img/soulia.jpg",
+    "title": "Portfolio Soulia",
+    "url": "http://souliamoor.nl/",
     "text": "De portfolio van mijn vrouw, door haar gedesigned in het jaar 2016. Deze website heeft haar geholpen bij Redkiwi aan de slag te gaan als UX designer.",
-    "technologies": [
-      "Bootstrap", 
-      "HTML5", 
-      "CSS3"
-    ]
+    "technologies": ["Bootstrap", "HTML5", "CSS3"]
   },
   {
-    "id": 3, 
-    "src": "/img/pure.jpg", 
-    "title": "PURE Gerbera", 
-    "url": "http://www.puregerbera.nl", 
-    "subtitle": "Bedrijfswebsite met CMS", 
+    "src": "/img/pure.jpg",
+    "title": "PURE Gerbera",
+    "url": "http://www.puregerbera.nl",
+    "subtitle": "Bedrijfswebsite met CMS",
     "text": "Door PURE Gerbera werd ik gevraagd een website te maken, voor hun nieuwe huisstijl. Ook wilden zij de collecties en teksten kunnen bewerken; hiervoor heb ik een compleet custom CMS gebouwd met PHP.",
-    "technologies": [
-      "PHP 5.4", 
-      "Bootstrap", 
-      "CSS3", 
-      "HTML5"
-    ]
+    "technologies": ["PHP 5.4", "Bootstrap", "CSS3", "HTML5"]
   },
   {
-    "id": 4, 
-    "src": "/img/skiss.png", 
-    "title": "SKISS", 
-    "subtitle": "Bedrijfswebsite", 
-    "url": "https://skiss.nl/", 
+    "id": 4,
+    "src": "/img/skiss.png",
+    "title": "SKISS",
+    "subtitle": "Bedrijfswebsite",
+    "url": "https://skiss.nl/",
     "text": "Bij SKISS heb ik mezelf in 3 dagen Angular en BEM aangeleerd om de bedrijfswebsite op te schonen en vervolgens mee te werken aan een aantal projecten.",
-    "technologies": [
-      "Angular", 
-      "FireBase",
-      "HTML5", 
-      "CSS3", 
-      "BEM"
-    ]
+    "technologies": ["Angular", "FireBase", "HTML5", "CSS3", "BEM"]
   },
   {
-    "id": 5, 
-    "src": "/img/fincircle.png", 
-    "title": "FinCircle", 
-    "subtitle": "Doorontwikkeling webapplicatie", 
+    "src": "/img/fincircle.png",
+    "title": "FinCircle",
+    "subtitle": "Doorontwikkeling webapplicatie",
     "text": "3 jaar lang heb ik bij Keylane meegewerkt aan de doorontwikkeling van FinCircle. Dit is een pensioenportaal waarop men kan inloggen om te zien hoeveel men heeft opgebouwd. Daarnaast kan men simuleren wat de gevolgen voor hun pensioen is bij bepaalde levensgebeurtenissen.",
     "technologies": [
-      "JavaScript", 
-      "HTML5", 
-      "CSS3", 
-      "C#", 
-      "ASP.NET", 
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "C#",
+      "ASP.NET",
       "Illustrator"
     ]
   }

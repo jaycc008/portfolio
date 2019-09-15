@@ -5,13 +5,12 @@ import Styles from '../Styles.json';
 import left from '../icons/arrow-left.svg';
 import right from '../icons/arrow-right.svg';
 
-const Project = ({ item, onClick, length }) => {
-  
+const Project = ({ item, onClick, length, current }) => {
   return (
     <Wrapper>
       <ContentWrapper>
         <Nav>
-          {item.id}/{length}
+          {current + 1}/{length}
           <Arrow onClick={useCallback(() => onClick('prev'), [onClick])} style={{backgroundImage: `url(${left})`}} />
           <Arrow onClick={useCallback(() => onClick('next'), [onClick])} style={{backgroundImage: `url(${right})`}} />
         </Nav>
