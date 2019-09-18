@@ -1,26 +1,24 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
-import Styles from '../Styles.json';
+import Styles from '../Styles';
 import chevrons from '../icons/double-chevron-black.svg';
 
-const Home = () => {
-  return (
-    <Wrapper>
-      <Left>
-        <Intro>
-          Hi, ik ben <br />
-          <Underline>Jayce Ardon</Underline> <br />
-          Frontend Developer
-        </Intro>
-      </Left>
-      <Right>
-        <ProfilePicture />
-        <Scroll>Scroll om me te leren kennen</Scroll>
-      </Right>
-    </Wrapper>
-  );
-}
+const Home = () => (
+  <Wrapper>
+    <Left>
+      <Intro>
+        Hi, ik ben <br />
+        <Underline>Jayce Ardon</Underline> <br />
+        Frontend Developer
+      </Intro>
+    </Left>
+    <Right>
+      <ProfilePicture />
+      <Scroll>Scroll om me te leren kennen</Scroll>
+    </Right>
+  </Wrapper>
+);
 
 const shift = keyframes`
   from {

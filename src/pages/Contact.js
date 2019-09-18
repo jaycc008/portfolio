@@ -1,21 +1,19 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import Styles from '../Styles.json';
+import Styles from '../Styles';
 
-const Home = () => {
-  return (
-    <Wrapper>
-      <div>
-        <Contact>Neem <Underline>contact</Underline> op met mij!</Contact>
-        <ContactInfo>
-          <p>+31 (0)6 18 96 64 53</p>
-          <Mail href="mailto:jayce@ja-development.nl">jayce@ja-development.nl</Mail>
-        </ContactInfo>
-      </div>
-    </Wrapper>
-  );
-}
+const Home = () => (
+  <Wrapper>
+    <div>
+      <Contact>Neem <Underline>contact</Underline> op met mij!</Contact>
+      <ContactInfo>
+        <p>+31 (0)6 18 96 64 53</p>
+        <Mail href="mailto:jayce@ja-development.nl">jayce@ja-development.nl</Mail>
+      </ContactInfo>
+    </div>
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   background-color: ${Styles.colors.secondary};

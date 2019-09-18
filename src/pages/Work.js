@@ -1,21 +1,29 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
-import Styles from '../Styles.json';
+import Styles from '../Styles';
 import Project from '../components/Project';
 import chevrons from '../icons/double-chevron-black.svg';
-import projectItems from '../data/ProjectItems.json';
+import projectItems from '../data/ProjectItems';
 
 function Work() {
   const [activeProject, setActiveProject] = React.useState(0);
 
   const navigate = (direction) => {
-    if(direction === 'prev'){
-      activeProject > 0 ? setActiveProject(activeProject - 1) : setActiveProject(projectItems.length - 1);
-    }else if(direction === 'next'){
-      activeProject < projectItems.length - 1 ? setActiveProject(activeProject + 1) : setActiveProject(0)
+    if (direction === 'prev') {
+      if (activeProject > 0) {
+        setActiveProject(activeProject - 1);
+      } else {
+        setActiveProject(projectItems.length - 1);
+      }
+    } else if (direction === 'next') {
+      if (activeProject < projectItems.length - 1) {
+        setActiveProject(activeProject + 1);
+      } else {
+        setActiveProject(0);
+      }
     }
-  }
+  };
 
   return (
     <Wrapper>
@@ -24,7 +32,7 @@ function Work() {
       </Intro>
       <RowWrapper>
         <Row>
-          <aside></aside>
+          <aside />
           <ProjectWrapper>
             <Project
               key={activeProject}
@@ -34,7 +42,7 @@ function Work() {
               length={projectItems.length}
             />
           </ProjectWrapper>
-          <aside></aside>
+          <aside />
         </Row>
       </RowWrapper>
       <Scroll>Scroll door voor mijn contactinformatie</Scroll>

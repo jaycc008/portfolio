@@ -1,0 +1,92 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "globals": {
+    "window": true,
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "class-methods-use-this": 0,
+    "function-paren-newline": [0],
+    "import/extensions": [1, {
+      "js": "never"
+    }],
+    "indent": ["error", 2],
+    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/anchor-is-valid": [0],
+    "jsx-a11y/click-events-have-key-events": [0],
+    "jsx-a11y/interactive-supports-focus": [0],
+    "jsx-a11y/label-has-for": [0],
+    "jsx-a11y/mouse-events-have-key-events": [0],
+    "react/jsx-props-no-spreading": [0],
+    "max-len": [0],
+    "camelcase": [0],
+    "no-confusing-arrow": [0],
+    "no-nested-ternary": [0],
+    "no-underscore-dangle": [0],
+    "object-curly-newline": [0],
+    "quotes": [2, "single"],
+    "react/default-props-match-prop-types": [2, { "allowRequiredDefaults": true }],
+    "react/destructuring-assignment": [0],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-indent": [0],
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-one-expression-per-line": [0],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-curly-newline": [0],
+    "react/no-multi-comp": [0],
+    "react/prefer-stateless-function": [0],
+    "react/react-in-jsx-scope": 2,
+    "react/require-default-props": [0],
+    "react/state-in-constructor": [0],
+    "react/static-property-placement": [0],
+    "strict": [2, "never"],
+    "react/sort-comp": [
+      1,
+      {
+        "order": [
+            "static-methods",
+            "lifecycle",
+            "everything-else",
+            "render"
+        ],
+        "groups": {
+          "lifecycle": [
+              "displayName",
+              "propTypes",
+              "contextTypes",
+              "childContextTypes",
+              "statics",
+              "defaultProps",
+              "props",
+              "state",
+              "constructor",
+              "componentWillMount",
+              "componentDidMount",
+              "componentWillReceiveProps",
+              "shouldComponentUpdate",
+              "componentWillUpdate",
+              "componentDidUpdate",
+              "componentWillUnmount"
+          ]
+        }
+      }
+    ],
+  },
+  "plugins": [
+    "react",
+    "flowtype",
+    "react-hooks"
+  ]
+}

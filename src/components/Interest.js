@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import Styles from '../Styles.json';
+import Styles from '../Styles';
 
-const Interest = ({item}) => {
+const Interest = ({ item }) => {
+  const interestRef = React.createRef();
+
   return (
-    <Wrapper>
+    <Wrapper ref={interestRef}>
       <Image src={item.src} alt={item.title} />
       <ContentWrapper>
         <Title>{item.title}</Title>
@@ -18,7 +21,11 @@ const Interest = ({item}) => {
       </ContentWrapper>
     </Wrapper>
   );
-}
+};
+
+Interest.propTypes = {
+  item: PropTypes.shape({}),
+};
 
 const Wrapper = styled.div`
   color: ${Styles.colors.primary};
@@ -35,9 +42,11 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  width: 50rem;
   @media (${Styles.breakpoints.tabletWidth}) {
     height: 50%;
-    object-fit: contain;
     transform: translateX(-19%);
   }
 `;

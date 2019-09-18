@@ -2,36 +2,36 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { animateScroll as scroll } from 'react-scroll';
 
-import Styles from '../Styles.json';
+import Styles from '../Styles';
 import linkedin from '../icons/linkedin.svg';
 import NavLink from './NavLink';
 
 const menuItems = [
-  {id: 0, target: "Home"}, 
-  {id: 1, target: "About"}, 
-  {id: 2, target: "Work"}, 
-  {id: 3, target: "Contact"}
+  { id: 0, target: 'Home' },
+  { id: 1, target: 'About' },
+  { id: 2, target: 'Work' },
+  { id: 3, target: 'Contact' },
 ];
 
 const Header = () => {
   const [activeId, setActiveId] = useState(0);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleScroll = () => {
-    if(window.scrollY >= window.innerHeight * 3){
+    if (window.scrollY >= window.innerHeight * 3) {
       setActiveId(3);
-    } else if (window.scrollY >= window.innerHeight * 2){
+    } else if (window.scrollY >= window.innerHeight * 2) {
       setActiveId(2);
-    } else if (window.scrollY >= window.innerHeight){
+    } else if (window.scrollY >= window.innerHeight) {
       setActiveId(1);
     } else {
       setActiveId(0);
     }
   };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigate = (id) => {
     scroll.scrollTo(id * window.innerHeight);
@@ -45,17 +45,18 @@ const Header = () => {
             JA
           </Logo>
           {menuItems.map((item) => (
-            <li key={item.id} >
-              <NavLink 
+            <li key={item.id}>
+              <NavLink
                 item={item}
                 isActive={activeId === item.id}
-                onClick={navigate} />
+                onClick={navigate}
+              />
             </li>
           ))}
         </Menu>
       </nav>
       <Icons>
-        <Icon className="icon-li" href="https://www.linkedin.com/in/jayce-ardon/" target="_blank"></Icon>
+        <Icon className="icon-li" href="https://www.linkedin.com/in/jayce-ardon/" target="_blank" />
       </Icons>
     </Wrapper>
   );

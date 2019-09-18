@@ -1,43 +1,49 @@
-import React,  {useCallback} from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import Styles from '../Styles.json';
+import Styles from '../Styles';
 import left from '../icons/arrow-left.svg';
 import right from '../icons/arrow-right.svg';
 
-const Project = ({ item, onClick, length, current }) => {
-  return (
-    <Wrapper>
-      <ContentWrapper>
-        <Nav>
-          {current + 1}/{length}
-          <Arrow onClick={useCallback(() => onClick('prev'), [onClick])} style={{backgroundImage: `url(${left})`}} />
-          <Arrow onClick={useCallback(() => onClick('next'), [onClick])} style={{backgroundImage: `url(${right})`}} />
-        </Nav>
-        <Title>
-          {item.title}
-        </Title>
-        <TextWrapper>
-          <aside />
-          <Text>
-            <SubTitle>
-              {item.subtitle}
-            </SubTitle>
-            <p>
-              {item.text}
-            </p>
-            <Technologies>
-              Technologiën: {item.technologies.join(', ')}
-            </Technologies>
-            {item.url ? <Link href={item.url} target='_blank'>Link naar website</Link> : ''}
-          </Text>
-          <aside />
-        </TextWrapper>
-      </ContentWrapper>
-      <Image style={{backgroundImage: `url(${item.src})`}} />
-    </Wrapper>
-  );
-}
+const Project = ({ item, onClick, length, current }) => (
+  <Wrapper>
+    <ContentWrapper>
+      <Nav>
+        {current + 1}/{length}
+        <Arrow onClick={useCallback(() => onClick('prev'), [onClick])} style={{ backgroundImage: `url(${left})` }} />
+        <Arrow onClick={useCallback(() => onClick('next'), [onClick])} style={{ backgroundImage: `url(${right})` }} />
+      </Nav>
+      <Title>
+        {item.title}
+      </Title>
+      <TextWrapper>
+        <aside />
+        <Text>
+          <SubTitle>
+            {item.subtitle}
+          </SubTitle>
+          <p>
+            {item.text}
+          </p>
+          <Technologies>
+            Technologiën: {item.technologies.join(', ')}
+          </Technologies>
+          {item.url ? <Link href={item.url} target="_blank">Link naar website</Link> : ''}
+        </Text>
+        <aside />
+      </TextWrapper>
+    </ContentWrapper>
+    <Image style={{ backgroundImage: `url(${item.src})` }} />
+  </Wrapper>
+);
+
+Project.propTypes = {
+  item: PropTypes.shape({}),
+  onClick: PropTypes.func,
+  length: PropTypes.number,
+  current: PropTypes.number,
+};
 
 const Wrapper = styled.div`
   height: 100%;

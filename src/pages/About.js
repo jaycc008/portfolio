@@ -1,48 +1,37 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components'
-import Slider from "react-slick";
+import styled, { keyframes } from 'styled-components';
 
-import Styles from '../Styles.json';
-import interests from '../data/Interests.json';
+import Styles from '../Styles';
+import interests from '../data/Interests';
 import Interest from '../components/Interest';
+import Slider from '../components/Slider';
 import chevrons from '../icons/double-chevron.svg';
-import left from '../icons/arrow-left-white.svg';
-import right from '../icons/arrow-right-white.svg';
 
 const About = () => {
+  const aboutRef = React.createRef();
+  const [w, setW] = React.useState(null);
 
-  const settings = {
-    className: "slider variable-width",
-    dots: true,
-    infinite: true,
-    initialSlide: 0,
-    slidesToScroll: 1,
-    variableWidth: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
-  };
+  React.useEffect(() => {
+    setW(aboutRef.current.clientWidth);
+  }, [aboutRef]);
 
   return (
-    <Wrapper>
-      <Slider {...settings}>
-        <div>
-          <TextWrapper>
-            <Intro>
-              Mijn passies en <br />
-              <Underline>drijfveren</Underline> zijn...
-            </Intro>
-            <Scroll>Scroll door en leer meer</Scroll>
-          </TextWrapper>
-        </div>
-        {interests.map(item => (
-          <div key={item.id}>
-            <Interest item={item} />
-          </div>
+    <Wrapper ref={aboutRef}>
+      <Slider parentClientWidth={w}>
+        <TextWrapper id="bananen">
+          <Intro>
+            Mijn passies en <br />
+            <Underline>drijfveren</Underline> zijn...
+          </Intro>
+          <Scroll>Scroll door en leer meer</Scroll>
+        </TextWrapper>
+        {interests.map((item) => (
+          <Interest key={item.id} item={item} />
         ))}
       </Slider>
     </Wrapper>
   );
-}
+};
 
 const shift = keyframes`
   from {
@@ -57,72 +46,11 @@ const shift = keyframes`
 const Wrapper = styled.div`
   background-color: ${Styles.colors.secondary};
   height: 100vh;
+  width: 100%;
   overflow: hidden;
+  position: relative;
   & div {
     outline: none;
-  }
-`;
-
-const PrevArrow = styled.div`
-  left: 0;
-  z-index: 1;
-  width: 4rem;
-  height: 4rem;
-  background-color: ${Styles.colors.highlight};
-  transition: 0.3s;
-
-  &.slick-disabled:hover {
-    background: ${Styles.colors.highlight};
-  }
-
-  &:not(.slick-disabled):hover {
-    background: ${Styles.colors.arrowHover};
-  }
-
-  &:before{
-    content: '';
-    background-image: url(${left});
-    background-repeat: no-repeat;
-    width: 1.6rem;
-    height: 1.4rem;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-`;
-
-const NextArrow = styled.div`
-  right: 0;
-  z-index: 1;
-  width: 4rem;
-  height: 4rem;
-  background-color: ${Styles.colors.highlight};
-  opacity: 1;
-  transition: 0.3s;
-
-  &.slick-disabled:hover {
-    background: ${Styles.colors.highlight};
-  }
-
-  &:not(.slick-disabled):hover {
-    background: ${Styles.colors.arrowHover};
-  }
-
-  &:before{
-    content: '';
-    background-image: url(${right});
-    background-repeat: no-repeat;
-    width: 1.6rem;
-    height: 1.4rem;
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    opacity: 1;
   }
 `;
 
